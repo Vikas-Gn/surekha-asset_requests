@@ -12,7 +12,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5012:5432"
+      - "5600:5432"
     networks:
       - asset-network
 
@@ -21,7 +21,7 @@ services:
       context: ./Backend
     container_name: Backend
     ports:
-      - "3044:3044"
+      - "3600:3600"
     depends_on:
       - postgres
     networks:
@@ -32,7 +32,7 @@ services:
       context: ./Employee-Asset
     container_name: Employee-Asset
     ports:
-      - "8053:80"
+      - "8600:80"
     networks:
       - asset-network
 
@@ -41,7 +41,7 @@ services:
       context: ./Hr Asset
     container_name: HR-Asset
     ports:
-      - "8054:80"
+      - "8601:80"
     networks:
       - asset-network
 
